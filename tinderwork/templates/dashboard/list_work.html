@@ -1,0 +1,9 @@
+{% if work.count > 0 %}
+    <h2>Список вакансий</h2>
+    <table>
+        <tr><th>Id</th><th>Имя</th><th>Описание</th></tr>
+        {% for vacancy in work %}
+        <tr><td>{{ vacancy.id }}</td><td>{{ vacancy.work_name }}</td><td>{{ vacancy.description_work}}</td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}

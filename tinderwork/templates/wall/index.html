@@ -1,0 +1,31 @@
+<html>
+
+<body>
+<h1>Здравствуйте, {{user_name}} session_id {{session_id}}</h1>
+
+<form action="" method="POST">
+{% csrf_token %}
+{% if error %}
+{{ error }}
+<br>
+<a href="/account/login/">Авторизоваться</a> <br>
+<a href="/account/register/">Зарегистрироваться</a>
+{% endif %}
+<br>
+<h2> Наименование работы <br>
+{{work_name}} </h2>
+<br><br><br><br>
+
+<tr>
+    <td><input type="submit" value="Нравится" name="_like"></td>
+    <td><input type="submit" value="Не нравится" name="_dislike"></td>
+    <td><input type="submit" value="Пропустить" name="_pass"></td>
+</tr>
+
+</form>
+{% if position %}
+Вам {{position}} эта должность\работа
+{% endif %}
+</html>
+
+</body>
